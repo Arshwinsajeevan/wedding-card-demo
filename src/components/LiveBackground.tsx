@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Particle {
@@ -17,8 +16,9 @@ export default function LiveBackground() {
 
   useEffect(() => {
     const generateParticles = () => {
+      // Reduce particle count slightly for better performance
       const isMobile = window.innerWidth < 768;
-      const count = isMobile ? 15 : 30;
+      const count = isMobile ? 12 : 25;
       const newParticles: Particle[] = [];
 
       for (let i = 0; i < count; i++) {
@@ -27,8 +27,8 @@ export default function LiveBackground() {
           x: Math.random() * 100, // percentage
           y: Math.random() * 100, // percentage
           size: Math.random() * 4 + 2, // 2px to 6px
-          duration: Math.random() * 20 + 10, // 10s to 30s
-          delay: Math.random() * 5,
+          duration: Math.random() * 15 + 15, // 15s to 30s
+          delay: Math.random() * 10,
         });
       }
       setParticles(newParticles);
@@ -40,33 +40,42 @@ export default function LiveBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-screen">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <style>{`
+        @keyframes floatParticle {
+          0% {
+            transform: translateY(120vh) translateX(0px) scale(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.8;
+            transform: translateY(100vh) translateX(10px) scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: translateY(50vh) translateX(-15px) scale(1.2);
+          }
+          90% {
+            opacity: 0.8;
+            transform: translateY(10vh) translateX(10px) scale(1);
+          }
+          100% {
+            transform: translateY(-20vh) translateX(-10px) scale(0);
+            opacity: 0;
+          }
+        }
+      `}</style>
       {particles.map((p) => (
-        <motion.div
+        <div
           key={p.id}
-          className="absolute rounded-full bg-gold-light/40 blur-[1px]"
+          className="absolute rounded-full bg-gold-light/60 blur-[1px]"
           style={{
             width: p.size,
             height: p.size,
             left: `${p.x}%`,
-            top: `${p.y}%`,
-          }}
-          animate={{
-            y: ["-20vh", "120vh"],
-            x: [
-              `${p.x}%`,
-              `${p.x + (Math.random() * 10 - 5)}%`,
-              `${p.x + (Math.random() * 20 - 10)}%`,
-            ],
-            opacity: [0, 0.8, 0],
-            scale: [0, 1.5, 0],
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            ease: "linear",
-            delay: p.delay,
-            times: [0, 0.5, 1]
+            animation: `floatParticle ${p.duration}s linear infinite`,
+            animationDelay: `${p.delay}s`,
+            willChange: "transform, opacity",
           }}
         />
       ))}

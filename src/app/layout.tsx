@@ -14,6 +14,8 @@ const lato = Lato({
   weight: ["300", "400", "700"],
 });
 
+import SmoothScroll from "@/components/SmoothScroll";
+
 export const metadata: Metadata = {
   title: "You are Invited | Wedding Invitation",
   description: "Join us in celebrating our wedding",
@@ -27,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} antialiased bg-texture min-h-screen text-maroon`}>
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

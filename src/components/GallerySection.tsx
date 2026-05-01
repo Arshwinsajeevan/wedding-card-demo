@@ -35,7 +35,7 @@ export default function GallerySection() {
               key={index}
               variants={{
                 hidden: { opacity: 0, scale: 0.8, y: 50 },
-                visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", bounce: 0.3, duration: 1 } }
+                visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } }
               }}
               whileHover={{ y: -5, scale: 1.02 }}
               className={`relative rounded-xl overflow-hidden border border-gold/20 shadow-lg group cursor-pointer ${

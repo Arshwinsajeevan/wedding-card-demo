@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function FloatingButtons() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    // Initialize audio
+    audioRef.current = new Audio("https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=soft-romantic-wedding-piano-108151.mp3");
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.5;
+
     const handleScroll = () => {
       if (window.scrollY > 400) {
         setShowTopBtn(true);
@@ -16,7 +22,12 @@ export default function FloatingButtons() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -27,10 +38,14 @@ export default function FloatingButtons() {
   };
 
   const toggleMusic = () => {
-    // In a real app, you would have an audio element ref here
-    // const audio = document.getElementById('bg-music') as HTMLAudioElement;
-    // if (isPlaying) audio.pause(); else audio.play();
-    setIsPlaying(!isPlaying);
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(e => console.error("Audio play failed:", e));
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (

@@ -13,7 +13,7 @@ export default function BrideGroomSection() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
+          transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
           whileHover={{ y: -10, boxShadow: "0 20px 40px -15px rgba(90,24,27,0.3)" }}
           className="flex-1 flex flex-col items-center text-center bg-cream p-8 rounded-t-full rounded-b-lg shadow-[0_10px_40px_-15px_rgba(90,24,27,0.15)] border border-gold/20 transition-all duration-300 group"
         >
@@ -56,7 +56,7 @@ export default function BrideGroomSection() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
           whileHover={{ y: -10, boxShadow: "0 20px 40px -15px rgba(90,24,27,0.3)" }}
           className="flex-1 flex flex-col items-center text-center bg-cream p-8 rounded-t-full rounded-b-lg shadow-[0_10px_40px_-15px_rgba(90,24,27,0.15)] border border-gold/20 transition-all duration-300 group"
         >

@@ -51,7 +51,7 @@ export default function EventsSection() {
               key={index}
               variants={{
                 hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
-                visible: { opacity: 1, x: 0, transition: { type: "spring", bounce: 0.4, duration: 1 } }
+                visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } }
               }}
               whileHover={{ scale: 1.03, boxShadow: "0 20px 40px -10px rgba(197,160,89,0.3)", y: -5 }}
               className="bg-white p-8 md:p-10 rounded-lg border border-gold/30 shadow-[0_4px_20px_rgba(197,160,89,0.1)] relative overflow-hidden group cursor-default transition-all duration-300"
