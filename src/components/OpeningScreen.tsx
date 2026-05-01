@@ -42,11 +42,11 @@ export default function OpeningScreen({ onOpen }: { onOpen: () => void }) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="z-10 flex flex-col items-center text-center p-8 md:p-12 border-2 border-gold/30 rounded-lg bg-cream/90 backdrop-blur-md shadow-2xl relative overflow-hidden"
+            className="z-10 flex flex-col items-center text-center p-8 md:p-14 border-2 border-gold/40 rounded-xl bg-cream/95 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.2)] relative overflow-hidden max-w-[90vw]"
           >
             {/* Shimmer effect */}
             <motion.div
-              className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[30deg]"
+              className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[30deg]"
               animate={{ left: ["-100%", "200%"] }}
               transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
             />
@@ -64,16 +64,16 @@ export default function OpeningScreen({ onOpen }: { onOpen: () => void }) {
                 <Image 
                   src="/motif.png" 
                   alt="Motif" 
-                  width={70} 
-                  height={70} 
-                  className="mb-6 mx-auto opacity-90 drop-shadow-md"
+                  width={80} 
+                  height={80} 
+                  className="mb-8 mx-auto opacity-100 drop-shadow-md"
                   style={{ filter: "brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(4645%) hue-rotate(346deg) brightness(85%) contrast(99%)" }}
                 />
               </motion.div>
-              <h2 className="font-serif text-maroon text-3xl md:text-4xl tracking-widest uppercase mb-3">
+              <h2 className="font-serif text-maroon-dark text-3xl md:text-5xl tracking-[0.15em] uppercase mb-4 font-semibold drop-shadow-sm">
                 You are invited
               </h2>
-              <p className="font-sans text-maroon-dark/80 text-sm md:text-base mb-10 uppercase tracking-[0.2em]">
+              <p className="font-sans text-maroon-dark/90 text-sm md:text-base mb-12 uppercase tracking-[0.25em] font-medium">
                 To celebrate our wedding
               </p>
               
