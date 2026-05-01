@@ -57,7 +57,7 @@ export default function HeroSection() {
           >
             <div className="h-[2px] w-12 md:w-24 bg-gradient-to-r from-transparent to-gold/90" />
             <p className="font-serif text-xl md:text-2xl text-cream tracking-[0.2em] font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-              25 • 08 • 2026
+              01 • 06 • 2026
             </p>
             <div className="h-[2px] w-12 md:w-24 bg-gradient-to-l from-transparent to-gold/90" />
           </motion.div>

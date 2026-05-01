@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function CountdownTimer() {
-  const targetDate = new Date("2026-08-25T10:00:00").getTime();
+  const targetDate = new Date("2026-06-01T10:00:00").getTime();
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,

@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const events = [
   {
     name: "Haldi & Mehendi",
-    date: "August 24, 2026",
+    date: "May 31, 2026",
     time: "10:00 AM - 2:00 PM",
     venue: "Varma Residence, Kochi",
     description: "Join us for vibrant colors, music, and traditional blessings.",
   },
   {
     name: "Wedding Ceremony (Muhurtham)",
-    date: "August 25, 2026",
+    date: "June 1, 2026",
     time: "09:30 AM - 11:30 AM",
     venue: "Guruvayur Temple, Kerala",
     description: "The traditional Kerala Hindu wedding ceremony.",
   },
   {
     name: "Grand Reception",
-    date: "August 25, 2026",
+    date: "June 1, 2026",
     time: "07:00 PM Onwards",
     venue: "Taj Malabar Resort & Spa, Kochi",
     description: "An evening of celebration, dinner, and dancing.",
