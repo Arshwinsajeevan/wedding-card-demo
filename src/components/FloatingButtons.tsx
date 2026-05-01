@@ -9,10 +9,10 @@ export default function FloatingButtons() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Initialize audio
-    audioRef.current = new Audio("https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=soft-romantic-wedding-piano-108151.mp3");
+    // Initialize audio with a soft, low romantic melody suitable for weddings
+    audioRef.current = new Audio("https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3");
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.5;
+    audioRef.current.volume = 0.3; // Low volume for background melody
 
     const handleScroll = () => {
       if (window.scrollY > 400) {
