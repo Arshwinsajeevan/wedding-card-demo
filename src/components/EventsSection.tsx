@@ -28,7 +28,7 @@ const events = [
 
 export default function EventsSection() {
   return (
-    <section className="py-24 px-6 bg-cream relative">
+    <section className="py-24 px-6 bg-cream relative overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl text-maroon mb-4">Wedding Events</h2>

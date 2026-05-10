@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${lato.variable} antialiased bg-texture min-h-screen text-maroon`}>
+      <body className={`${playfair.variable} ${lato.variable} antialiased bg-texture min-h-screen text-maroon overflow-x-hidden w-full`}>
         <SmoothScroll>
           {children}
         </SmoothScroll>

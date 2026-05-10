@@ -41,13 +41,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 2, delay: 0.8, ease: "easeOut" }}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] font-medium"
+            className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] font-medium flex flex-wrap justify-center items-center px-2"
           >
-            Rahul <motion.span 
+            <span className="whitespace-nowrap">Rahul</span>
+            <motion.span 
               animate={{ color: ["#c5a059", "#dfc282", "#c5a059"] }}
               transition={{ duration: 3, repeat: Infinity }}
               className="text-gold inline-block mx-2 drop-shadow-[0_2px_5px_rgba(0,0,0,0.3)]"
-            >&amp;</motion.span> Anjali
+            >&amp;</motion.span>
+            <span className="whitespace-nowrap">Anjali</span>
           </motion.h1>
           <motion.div 
             initial={{ opacity: 0, width: 0 }}

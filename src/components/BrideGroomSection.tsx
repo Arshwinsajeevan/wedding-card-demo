@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BrideGroomSection() {
   return (
-    <section className="py-20 px-6 bg-sandalwood/20 relative">
+    <section className="py-20 px-6 bg-sandalwood/20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-8 justify-center">
         
         {/* Groom */}
